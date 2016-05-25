@@ -48,15 +48,17 @@ module Stupidedi
                                                             s::INS.use(1200, r::Situational,  d::RepeatCount.unbounded),
                                                             s::REF.use(1300, r::Situational,  d::RepeatCount.unbounded),
                                                             s::DTP.use(1350, r::Situational, d::RepeatCount.unbounded),
-                                                            s::NM1.use(1400, r::Situational, d::RepeatCount.unbounded),
-                                                            s::PER.use(1500, r::Situational,  d::RepeatCount.unbounded),
-                                                            s:: N3.use(1600, r::Situational,  d::RepeatCount.unbounded),
-                                                            s:: N4.use(1700, r::Situational,  d::RepeatCount.unbounded),
-                                                            s::HD.use(1800, r::Situational,  d::RepeatCount.unbounded),
-                                                            s::DMG.use(1900, r::Situational,  d::RepeatCount.unbounded),
-                                                            s::HLH.use(2100, r::Situational,  d::RepeatCount.unbounded),
-                                                            s::HD.use(1800, r::Situational,  d::RepeatCount.unbounded),
-                                                            s::AMT.use(2300, r::Situational,  d::RepeatCount.unbounded))))
+                                                            d::LoopDef.build("1200", d::RepeatCount.unbounded,
+                                                                             s::NM1.use(1400, r::Situational, d::RepeatCount.unbounded),
+                                                                             s::PER.use(1500, r::Situational,  d::RepeatCount.unbounded),
+                                                                             s:: N3.use(1600, r::Situational,  d::RepeatCount.unbounded),
+                                                                             s:: N4.use(1700, r::Situational,  d::RepeatCount.unbounded),
+                                                                             s::DMG.use(1900, r::Situational,  d::RepeatCount.unbounded),
+                                                                             s::HLH.use(2100, r::Situational,  d::RepeatCount.unbounded),
+                                                                             s:: HD.use(1200, r::Situational,  d::RepeatCount.unbounded),
+                                                                             s::DTP.use(1350, r::Situational, d::RepeatCount.unbounded),
+                                                                             s::AMT.use(2300, r::Situational,  d::RepeatCount.unbounded),
+                                                                             s::REF.use(1300, r::Situational,  d::RepeatCount.unbounded)))))
        end
     end
   end
