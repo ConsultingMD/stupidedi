@@ -82,9 +82,11 @@ module Stupidedi
               "GB"  => "Other Insured",
               "HK"  => "Subscriber",
               "IL"  => "Insured or Subscriber",
+              "IN"  => "IN",
               "LI"  => "Independent Lab",
               "MSC" => "Mammography Screening Center",
               "P3"  => "Primary Care Provider",
+              "P5"  => "P5",
               "PE"  => "Payee",
               "PR"  => "Payer",
               "PRP" => "Primary Payer",
@@ -112,6 +114,7 @@ module Stupidedi
             s::CodeList.build(
               "04"  => s::CodeList.external("91"),
               "0B"  => "State License Number",
+              "0F"  => "0F",
               "0K"  => "Policy Form Identifying Number",
               "1A"  => "Blue Cross Provider Number",
               "1B"  => "Blue Shield Provider Number",
@@ -124,8 +127,10 @@ module Stupidedi
               "1L"  => "Group or Policy Number",
               "1S"  => "Ambulatory Patient Group (APG) Number",
               "1W"  => "Member Identification Number",
+              "23"  => "23",
               "28"  => "Employee Identification Number",
               "2U"  => "Payer Identification Number",
+              "38"  => 'foo',
               "4N"  => "Special Payment Reference Number",
               "6P"  => "Group Number",
               "6R"  => "Provider Control Number",
@@ -173,6 +178,7 @@ module Stupidedi
               "P4"  => "Project Code",
               "PQ"  => "Payee Indentification",
               "PXC" => s::CodeList.external("682"),
+              "QQ"  => "QQ",
               "RB"  => "Rate code number",
               "SY"  => "Social Security Number",
               "T4"  => "Signal Code",
@@ -180,7 +186,8 @@ module Stupidedi
               "VY"  => "Link Sequence Number",
               "Y4"  => "Agency Claim Number",
               "X4"  => "Clinical Laboratory Improvement Amendment Number",
-              "XZ"  => "Pharmacy Prescription Number"))
+              "XZ"  => "Pharmacy Prescription Number",
+              "ZZ"  => "ZZ"))
 
           E142  = t::AN.new(:E142 , "Application's Sender Code"            , 2, 15)
           E143  = t::ID.new(:E143 , "Transaction Set Identifier Number"    , 3, 3,
@@ -293,9 +300,11 @@ module Stupidedi
           E364  = t::AN.new(:E364 , "Communication Number"                 , 1, 256)
           E365  = t::ID.new(:E365 , "Communication Number Qualifier"       , 2, 2,
             s::CodeList.build(
+              "CP" => "CP",
               "EM" => "Electronic Mail",
               "EX" => "Telephone Extension",
               "FX" => "Facsimile",
+              "HP" => "HP",
               "TE" => "Telephone",
               "UR" => "Uniform Resource Locator (URL)"))
 
@@ -303,7 +312,8 @@ module Stupidedi
             s::CodeList.build(
               "BL" => "Technical Department",
               "CX" => "Payers Claim Office",
-              "IC" => "Information Contact"))
+              "IC" => "Information Contact",
+              "IP" => "IP"))
 
           E373  = t::DT.new(:E373 , "Date"                                 , 8, 8)
           E374  = t::ID.new(:E374 , "Date/Time Qualifier"                  , 3, 3,
@@ -323,6 +333,9 @@ module Stupidedi
               "297" => "Initial Disability Period Last Day Worked",
               "304" => "Latest Visit or Consultation",
               "314" => "Disability",
+              "348" => "Health Coverage Begin Date",
+              "336" => "Eligibility Begin Date",
+              "356" => "Employment Begin Date",
               "360" => "Initial Disability Period Start",
               "361" => "Initial Disability Period End",
               "405" => "Production",
@@ -444,6 +457,7 @@ module Stupidedi
               "AU"  => "Coverage Amount",
               "B6"  => "Allowed Amount",
               "D"   => "Payor Amount Paid",
+              "D2"  => "Deductible Amount",
               "D8"  => "Discount Amount",
               "DY"  => "Per Day Limit",
               "EAF" => "Amount Owed",
@@ -568,6 +582,9 @@ module Stupidedi
           E669  = t::ID.new(:E669 , "Currency Market/Exchnage Code"        , 3, 3)
           E673  = t::ID.new(:E673 , "Quantity Qualifier"                   , 2, 2,
             s::CodeList.build(
+              'ET' => 'et',
+              'DT' => 'dt',
+              'TO' => 'to',
               "90" => "Acknowledged Quantity",
               "AA" => "Unacknowledged Quantity",
               "CA" => "Covered - Actual",
