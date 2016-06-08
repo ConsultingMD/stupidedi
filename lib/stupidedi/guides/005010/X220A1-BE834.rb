@@ -42,24 +42,22 @@ module Stupidedi
                                                       b::Element(e::Required,     "Quantity"),
                                                       b::Element(e::NotUsed,     ""),
                                                       b::Element(e::NotUsed,     "")),
-                                           d::LoopDef.build("1000", d::RepeatCount.unbounded,
-                                                            s:: N1.use(1100, r::Required,  d::RepeatCount.bounded(1))),
+                                           b::Segment(510, s::N1, "Foo",
+                                                      r::Required, d::RepeatCount.bounded(2),
+                                                      b::Element(e::Required,    ""),
+                                                      b::Element(e::Required,    ""),
+                                                      b::Element(e::NotUsed,     ""),
+                                                      b::Element(e::NotUsed,     ""),
+                                                      b::Element(e::NotUsed,     ""),
+                                                      b::Element(e::NotUsed,     ""))),
+                        d::TableDef.header("Table 2 - Covereds",
                                            d::LoopDef.build("1100", d::RepeatCount.unbounded,
                                                             s::INS.use(1200, r::Situational,  d::RepeatCount.unbounded),
                                                             s::REF.use(1300, r::Situational,  d::RepeatCount.unbounded),
                                                             s::DTP.use(1350, r::Situational, d::RepeatCount.unbounded),
-                                                            d::LoopDef.build("1200", d::RepeatCount.unbounded,
-                                                                             s::NM1.use(1400, r::Situational, d::RepeatCount.unbounded),
-                                                                             s::PER.use(1500, r::Situational,  d::RepeatCount.unbounded),
-                                                                             s:: N3.use(1600, r::Situational,  d::RepeatCount.unbounded),
-                                                                             s:: N4.use(1700, r::Situational,  d::RepeatCount.unbounded),
-                                                                             s::DMG.use(1900, r::Situational,  d::RepeatCount.unbounded),
-                                                                             s::HLH.use(2100, r::Situational,  d::RepeatCount.unbounded),
-                                                                             s:: HD.use(1200, r::Situational,  d::RepeatCount.unbounded),
-                                                                             s::DTP.use(1350, r::Situational, d::RepeatCount.unbounded),
-                                                                             s::AMT.use(2300, r::Situational,  d::RepeatCount.unbounded),
-                                                                             s::REF.use(1300, r::Situational,  d::RepeatCount.unbounded)))))
-       end
+                                                            s::REF.use(1300, r::Situational,  d::RepeatCount.unbounded))))
+
+      end
     end
   end
 end
